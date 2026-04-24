@@ -1,6 +1,9 @@
 import TaskItem from "./TaskItem";
 
 function TaskList({ tasks, deleteTask, toggleTask, editTask }) {
+  if (tasks.length === 0) {
+    return <p style={{ textAlign: "center" }}>No tasks yet. Add one!</p>;
+  }
   return (
     <div>
       {tasks.map((task) => (
