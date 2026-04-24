@@ -40,3 +40,15 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+.delete-btn {
+  background: #e74c3c;
+}
+
+.edit-btn {
+  background: #3498db;
+}
+
+.save-btn {
+  background: #2ecc71;
+}
