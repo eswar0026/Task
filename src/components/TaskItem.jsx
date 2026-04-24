@@ -14,7 +14,7 @@ function TaskItem({ task, deleteTask, toggleTask, editTask }) {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      background: "#f9f9f9",
+      background: task.completed ? "#d3f9d8" : "#f9f9f9",
       padding: "10px",
       marginTop: "10px",
       borderRadius: "5px"
@@ -26,7 +26,7 @@ function TaskItem({ task, deleteTask, toggleTask, editTask }) {
             value={newText}
             onChange={(e) => setNewText(e.target.value)}
           />
-          <button onClick={handleEdit}>Save</button>
+          <button className="save-btn" onClick={handleEdit}>Save</button>
         </>
       ) : (
         <>
@@ -40,8 +40,12 @@ function TaskItem({ task, deleteTask, toggleTask, editTask }) {
             {task.text}
           </span>
 
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={() => deleteTask(task.id)}>Delete</button>
+          <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit</button>
+          <button className="delete-btn" onClick={() => {
+            if (window.confirm("Delete this task?")) {
+              deleteTask(task.id);
+            }
+          }}>Delete</button>
         </>
       )}
     </div>
