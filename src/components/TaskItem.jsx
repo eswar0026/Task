@@ -34,7 +34,6 @@ function TaskItem({ task, deleteTask, toggleTask, editTask }) {
           alignItems: "flex-start"
         }}>
 
-          {/* LEFT SIDE */}
           <div style={{ maxWidth: "70%" }}>
             <span
               onClick={() => toggleTask(task.id)}
@@ -63,7 +62,6 @@ function TaskItem({ task, deleteTask, toggleTask, editTask }) {
             </p>
           </div>
 
-          {/* RIGHT SIDE */}
           <div>
             <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit</button>
             <button
