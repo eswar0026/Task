@@ -12,7 +12,6 @@ function TaskList({ tasks, deleteTask, toggleTask, editTask }) {
         🚀 No tasks yet. Add your first task!
       </p>
     );
-    return <p style={{ textAlign: "center" }}>No tasks yet. Add one!</p>;
   }
   return (
     <div>
